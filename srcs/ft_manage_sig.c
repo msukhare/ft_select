@@ -6,7 +6,7 @@
 /*   By: msukhare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 17:59:04 by msukhare          #+#    #+#             */
-/*   Updated: 2018/03/09 17:25:35 by msukhare         ###   ########.fr       */
+/*   Updated: 2018/09/20 19:24:54 by kemar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void			ft_catch_ctrz(int n)
 {
 	char		tmp[2];
 
-	n = 0;
+	(void)n;
 	ft_refresh(0, 0, 0);
 	ft_vis_curs();
 	tmp[0] = g_term.termi.c_cc[VSUSP];
@@ -54,7 +54,7 @@ void			ft_redimterm(int n)
 
 	size = 0;
 	tmp = g_term.begin_list;
-	n = 0;
+	(void)n;
 	while (tmp->curse != 1)
 	{
 		size += (ft_strlen(tmp->argu) + 1);
@@ -70,7 +70,7 @@ void			ft_backto_fct(int n)
 	int			size;
 
 	size = 0;
-	n = 0;
+	(void)n;
 	if ((tcgetattr(0, &term)) < 0)
 		ft_escape("tcgetattr fail\n", 1);
 	if ((ft_push(&term)) < 0)
